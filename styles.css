@@ -1,0 +1,312 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: white;
+    color: hsl(278, 68%, 11%);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px;
+    min-width: 355px;
+}
+
+#content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* HEADER STYLES */
+header {
+    background: url("images/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    min-height: 220px;
+    width: 100%;
+}
+
+#card-container {
+    min-width: 360px;
+}
+
+#back {
+    background: url("images/bg-card-back.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 150px;
+    margin: 25px 15px 0 70px;
+    max-width: 280px;
+    position: absolute;
+    width: 75%;
+}
+
+#back .card-details {
+    padding: 68px 0 0 220px;
+}
+
+#front {
+    background: url("images/bg-card-front.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    height: 150px;
+    justify-content: space-between;
+    margin-left: 15px;
+    max-width: 280px;
+    padding: 20px;
+    position: absolute;
+    top: 110px;
+    width: 75%;
+    z-index: 1;
+}
+
+#front img {
+    padding-bottom: 30px;
+    width: 60%;
+}
+
+.numerals {
+    letter-spacing: .12em;
+    text-align: center;
+    width: 100%;
+    word-spacing: .2em;
+}
+
+.card-details {
+    font-size: .55em;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+
+/* ENTRY FORM STYLES */
+#entry-form {
+    margin: 20px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 80px;
+}
+
+.long-form {
+    width: 100%;
+}
+
+.short-form {
+    width: 50%;
+}
+
+label {
+    font-size: .65em;
+    letter-spacing: .15em;
+    text-transform: uppercase;
+}
+
+input {
+    border: 1px solid hsl(270, 3%, 87%);
+    border-radius: 5px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1em;
+    margin: 5px 0 10px;
+    padding: 10px;
+}
+
+input:focus {
+    border: 1px solid hsl(249, 99%, 64%);
+    outline: 1px solid hsl(278, 94%, 30%);
+}
+
+.error {
+    color: red;
+    font-size: .65em;
+}
+
+::placeholder {
+    color: hsl(279, 6%, 55%);
+}
+
+[name=cardholder],
+[name=number] {
+    width: 100%;
+}
+
+[id=date] {
+    width: 40%;
+}
+
+[id=cvc] {
+    width: 100%;
+}
+
+[type=submit] {
+    background: hsl(278, 68%, 11%);
+    border: none;
+    color: white;
+    cursor: pointer;
+    margin-top: 15px;
+    width: 100%;
+}
+
+/* CONFIRMATION PAGE STYLES */
+#confirmation {
+    display: none;
+    margin: 20px;
+    text-align: center;
+}
+
+#confirmation figure {
+    margin-top: 100px;
+}
+
+h1 {
+    font-weight: 500;
+    letter-spacing: .1em;
+    margin: 40px 0 10px;
+    text-transform: uppercase;
+}
+
+#confirmation p {
+    color: hsl(279, 6%, 55%);
+}
+
+button {
+    background: hsl(278, 68%, 11%);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1em;
+    margin: 40px 0;
+    padding: 15px;
+    width: 100%;
+}
+
+/* FOOTER STYLES */
+footer {
+    margin-top: 50px;
+    width: 100%;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+/*********** TABLET STYLES ***********/
+@media (min-width: 875px) {
+
+    #content {
+        align-items: center;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+    }
+
+    /* HEADER STYLES */
+    header {
+        background: url("images/bg-main-desktop.png") no-repeat;
+        background-size: cover;
+        height: 100vh;
+        max-width: 300px;
+    }
+
+    #card-container {
+        height: 100vh;
+    }
+
+    #back {
+        left: 180px;
+        margin: 0;
+        top: calc(50vh + 15px);
+    }
+
+    #front {
+        left: 130px;
+        margin: 0;
+        top: calc(50vh - 155px);
+    }
+
+    .numerals {
+        padding-bottom: 10px;
+    }
+
+    /* ENTRY FORM STYLES */
+    #entry-form {
+        margin-right: 100px;
+        max-width: 300px;
+    }
+
+    form {
+        margin-top: 0;
+    }
+
+    /* CONFIRMATION PAGE STYLES */
+    #confirmation {
+        margin-right: 100px;
+    }
+
+    #confirmation figure {
+        margin-top: 0;
+    }
+
+}
+
+/********** DESKTOP STYLES **********/
+
+@media (min-width: 1050px) {
+
+    body {
+        font-size: 18px;
+        max-width: 1150px;
+    }
+
+    /* HEADER STYLES */
+    header {
+        max-width: 380px;
+    }
+
+    #back {
+        height: 180px;
+        left: 200px;
+        max-width: 330px;
+    }
+
+    #back .card-details {
+        padding: 82px 0 0 265px;
+    }
+
+    #front {
+        height: 180px;
+        left: 150px;
+        max-width: 330px;
+        top: calc(50vh - 195px);
+    }
+
+    #front img {
+        width: 75%;
+    }
+
+    /* ENTRY FORM STYLES */
+    #entry-form {
+        max-width: 400px;
+    }
+
+    /* CONFIRMATION PAGE STYLES */
+    button {
+        min-width: 350px;
+    }
+
+}
