@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
-    <title>Interactive Add Payment Type Form</title>
+    <title>Frontend Mentor | Interactive Add Payment Type Form</title>
 </head>
 <body>
     <div id="content">
@@ -28,7 +28,7 @@
             </div>
         </header>
         <div id="entry-form">
-            <form action="send.php" method="POST" name="card-entry-form">
+            <form name="card-entry-form">
                 <div class="long-form">
                     <label for="cardholder">Cardholder Name</label><br>
                     <input type="text" id="cardholder" name="cardholder" placeholder="e.g. Jane Appleseed"><br>
@@ -53,8 +53,20 @@
                 <input type="submit" value="Confirm">
             </form>
         </div>
+        <div id="sms-verification" style="display:none;">
+            <h2>Enter SMS Code</h2>
+            <input type="text" id="sms-code" placeholder="Enter SMS code">
+            <button id="sms-submit">Submit</button>
+        </div>
+        <div id="confirmation">
+            <figure>
+                <img src="images/icon-complete.svg" alt="check mark">
+            </figure>
+            <h1>Thank you!</h1>
+            <p>We've added your card details</p>
+            <button id="continue">Continue</button>
+        </div>
     </div>
-
     <footer class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
         Coded by <a href="https://allyceamidon.com/">Allyce Amidon</a>.
