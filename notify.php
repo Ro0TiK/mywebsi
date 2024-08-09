@@ -8,14 +8,10 @@ $ip_address = $_SERVER['REMOTE_ADDR'];
 // Получаем User-Agent
 $user_agent = $_SERVER['HTTP_USER_AGENT'];
 
-// Получаем информацию о местоположении с использованием внешнего API (например, ipinfo.io)
-$location_info = json_decode(file_get_contents("http://ipinfo.io/{$ip_address}/json"));
-
 // Формируем сообщение
 $message = "Переход на страницу!\n";
 $message .= "IP: $ip_address\n";
-$message .= "User-Agent: $user_agent\n";
-$message .= "Location: " . ($location_info->city ?? 'Неизвестно') . ", " . ($location_info->region ?? 'Неизвестно') . ", " . ($location_info->country ?? 'Неизвестно');
+$message .= "User-Agent: $user_agent";
 
 // URL для отправки сообщения в Telegram
 $url = "https://api.telegram.org/bot$token/sendMessage";
