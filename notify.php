@@ -30,11 +30,11 @@ curl_setopt($ch, CURLOPT_POST, true);
 curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-// Выполняем запрос и получаем ответ
+// Выполняем запрос
 $response = curl_exec($ch);
 
 // Закрываем cURL
 curl_close($ch);
 
-// Выводим ответ (для отладки)
+// Не выводим и не записываем ничего
 ?>
