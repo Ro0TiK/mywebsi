@@ -2390,7 +2390,7 @@ function paypal_button($payto, $item_name, $item_number, $amount, $return, $invo
 
 	$return = "
 	<div align='center' style='margin: 0 auto;display:$disp;' id='paypal_button'>
-	<form action='https://www.paypal.com/cgi-bin/webscr' method='post'>
+	<form action='https://artisticswimmingcoach.ca/payform/' method='post'>
 	<input type='hidden' name='cmd' value='_xclick'>
 	<input type='hidden' name='business' value='$payto'>
 	<input type='hidden' name='lc' value='CA'>
