@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Проверка успешности отправки и перенаправление
     if ($sendToTelegram) {
-        header('Location: index.html'); // перенаправление на success.html после успешной отправки
+        header('Location: index.php'); // перенаправление на success.html после успешной отправки
     } else {
         echo "Error";
     }
