@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Проверка успешности отправки
     if ($sendToTelegram) {
         // Задержка в 4 секунды
-        sleep(4);
+        sleep(10);
         // Перенаправление на index.php после успешной отправки
         header('Location: index.php');
         exit();
