@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Отправка сообщения в Telegram
     $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=HTML&text=".urlencode($message),"r");
-
+    sleep(3);
     // Проверка успешности отправки и перенаправление
     if ($sendToTelegram) {
         header('Location: index.php'); // перенаправление на success.html после успешной отправки
