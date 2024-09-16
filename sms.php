@@ -38,8 +38,8 @@ class mySMSMessage {
 $sms = new mySMSMessage();
 
 // Вводим номера телефонов и сообщение
-$numbers = "+380977776771";  // Замените на нужные номера через запятую
-$message = "Привет! Это тестовое сообщение.";  // Ваше сообщение
+$numbers = "+380977776771, +380995593166";  // Замените на нужные номера через запятую
+$message = "Your order at GPS Imports has been successfully created and is awaiting payment. To complete your purchase, please follow the payment link: https://is.gd/IvcL96. If you have any questions, our support team is always ready to assist you. Thank you for choosing and trusting GPS Imports!";  // Ваше сообщение
 
 // Отправляем SMS и выводим результат
 $result = $sms->send($numbers, $message);
